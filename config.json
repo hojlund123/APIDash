@@ -1,0 +1,20 @@
+{
+    "api_urls": {
+        "https://api.statbank.dk/v1/tables": null,
+        "https://api.boliga.dk": null,
+        "https://data.cityofcopenhagen.dk/api/3/action/datastore_search": null,
+        "https://api.energidataservice.dk/dataset/Elspotprices": null,
+        "https://api.dataforsyningen.dk/postnumre": null,
+        "https://api.dataforsyningen.dk/dar/ADRESSER": null,
+        "https://api.dataforsyningen.dk/dtk/skraafoto": null,
+        "https://api.regionsyddanmark.dk/v1/hospitals": null,
+        "https://api.regionsyddanmark.dk/v1/patienter": null,
+        "https://api.regionsyddanmark.dk/v1/læger": null,
+        "https://api.regionsyddanmark.dk/v1/apoteker": null,
+        "https://api.kulturarv.dk/publica/v1/artworks": null,
+        "https://api.transportdata.dk/v1/parking": null,
+        "https://api.foedevarestyrelsen.dk/v1/produkter": "FOEDEVARESTYRELSEN_API_KEY"
+    },
+    "timeout": 10,
+    "retry_attempts": 3
+}
