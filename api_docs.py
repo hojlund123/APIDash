@@ -77,6 +77,9 @@ def document_fields(data, indent=0):
                     for stat_key, stat_value in analysis.items():
                         if stat_key != 'Type':
                             doc += " " * (indent + 2) + f"- {stat_key}: {stat_value}\n"
+            elif isinstance(value, dict):
+                doc += "dictionary\n"
+                doc += document_fields(value, indent + 2)
             else:
                 analysis = analyze_data([value])
                 doc += f"{analysis['Type']}\n"
