@@ -107,7 +107,10 @@ def generate_documentation(api_name, api_url, api_data):
     doc += json.dumps(api_data, indent=4)[:1000]  # Truncate for brevity in example
     doc += "\n```\n\n"
     doc += "## Fields\n"
-    doc += document_fields(api_data)
+    if isinstance(api_data, list):
+        doc += document_fields(api_data[0])
+    else:
+        doc += document_fields(api_data)
     return doc
 
 # Main function to create documentation for all APIs
