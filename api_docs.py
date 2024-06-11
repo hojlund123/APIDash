@@ -61,6 +61,40 @@ def analyze_data(data):
         analysis['Sample Data'] = data[:5]
     return analysis
 
+# Recursive function to document fields and their possible values
+def document_fields(data, indent=0):
+    doc = ""
+    if isinstance(data, dict):
+        for key, value in data.items():
+            doc += " " * indent + f"- **{key}**: "
+            if isinstance(value, list):
+                if len(value) > 0 and isinstance(value[0], dict):
+                    doc += "list of dictionaries\n"
+                    doc += document_fields(value[0], indent + 2)
+                else:
+                    analysis = analyze_data(value)
+                    doc += f"list of {analysis['Type']}\n"
+                    for stat_key, stat_value in analysis.items():
+                        if stat_key != 'Type':
+                            doc += " " * (indent + 2) + f"- {stat_key}: {stat_value}\n"
+            else:
+                analysis = analyze_data([value])
+                doc += f"{analysis['Type']}\n"
+                for stat_key, stat_value in analysis.items():
+                    if stat_key != 'Type':
+                        doc += " " * (indent + 2) + f"- {stat_key}: {stat_value}\n"
+    elif isinstance(data, list):
+        if len(data) > 0 and isinstance(data[0], dict):
+            doc += "list of dictionaries\n"
+            doc += document_fields(data[0], indent + 2)
+        else:
+            analysis = analyze_data(data)
+            doc += f"list of {analysis['Type']}\n"
+            for stat_key, stat_value in analysis.items():
+                if stat_key != 'Type':
+                    doc += " " * (indent + 2) + f"- {stat_key}: {stat_value}\n"
+    return doc
+
 # Function to generate documentation for the API
 def generate_documentation(api_name, api_url, api_data):
     doc = f"# {api_name} API Documentation\n\n"
@@ -70,38 +104,7 @@ def generate_documentation(api_name, api_url, api_data):
     doc += json.dumps(api_data, indent=4)[:1000]  # Truncate for brevity in example
     doc += "\n```\n\n"
     doc += "## Fields\n"
-
-    if isinstance(api_data, list) and len(api_data) > 0:
-        api_data = api_data[0]
-
-    if isinstance(api_data, dict):
-        for key, value in api_data.items():
-            if isinstance(value, list) and len(value) > 0:
-                doc += f"- **{key}**: list\n"
-                first_element = value[0]
-                if isinstance(first_element, dict):
-                    doc += "  - **List Headers**:\n"
-                    for sub_key, sub_value in first_element.items():
-                        sub_analysis = analyze_data([item[sub_key] for item in value if sub_key in item])
-                        doc += f"    - **{sub_key}**: {sub_analysis['Type']}\n"
-                        for stat_key, stat_value in sub_analysis.items():
-                            if stat_key != 'Type':
-                                doc += f"      - {stat_key}: {stat_value}\n"
-                else:
-                    analysis = analyze_data(value)
-                    doc += f"  - List contains elements of type: {analysis['Type']}\n"
-                    for stat_key, stat_value in analysis.items():
-                        if stat_key != 'Type':
-                            doc += f"    - {stat_key}: {stat_value}\n"
-            else:
-                analysis = analyze_data([value])
-                doc += f"- **{key}**: {analysis['Type']}\n"
-                for stat_key, stat_value in analysis.items():
-                    if stat_key != 'Type':
-                        doc += f"  - {stat_key}: {stat_value}\n"
-    else:
-        doc += "Unable to parse fields from the response data.\n"
-    
+    doc += document_fields(api_data)
     return doc
 
 # Main function to create documentation for all APIs
