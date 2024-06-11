@@ -48,74 +48,74 @@
 ```
 
 ## Fields
-- **id**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 6
-  - Median Length: 6
-  - Mode Length: N/A
-  - Max Length: 6
-  - Min Length: 6
-- **text**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 27
-  - Median Length: 27
-  - Mode Length: N/A
-  - Max Length: 27
-  - Min Length: 27
-- **unit**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 5
-  - Median Length: 5
-  - Mode Length: N/A
-  - Max Length: 5
-  - Min Length: 5
-- **updated**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 19
-  - Median Length: 19
-  - Mode Length: N/A
-  - Max Length: 19
-  - Min Length: 19
-- **firstPeriod**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 6
-  - Median Length: 6
-  - Mode Length: N/A
-  - Max Length: 6
-  - Min Length: 6
-- **latestPeriod**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 6
-  - Median Length: 6
-  - Mode Length: N/A
-  - Max Length: 6
-  - Min Length: 6
-- **active**: Number
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Mean: 1
-  - Median: True
-  - Standard Deviation: N/A
-  - Variance: N/A
-  - Mode: N/A
-  - Range: N/A
-  - Max: True
-  - Min: True
-- **variables**: list
-  - List contains elements of type: String
+list of dictionaries
+  - **id**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 6
+    - Median Length: 6
+    - Mode Length: N/A
+    - Max Length: 6
+    - Min Length: 6
+  - **text**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 27
+    - Median Length: 27
+    - Mode Length: N/A
+    - Max Length: 27
+    - Min Length: 27
+  - **unit**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 5
+    - Median Length: 5
+    - Mode Length: N/A
+    - Max Length: 5
+    - Min Length: 5
+  - **updated**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 19
+    - Median Length: 19
+    - Mode Length: N/A
+    - Max Length: 19
+    - Min Length: 19
+  - **firstPeriod**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 6
+    - Median Length: 6
+    - Mode Length: N/A
+    - Max Length: 6
+    - Min Length: 6
+  - **latestPeriod**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 6
+    - Median Length: 6
+    - Mode Length: N/A
+    - Max Length: 6
+    - Min Length: 6
+  - **active**: Number
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Mean: 1
+    - Median: True
+    - Standard Deviation: N/A
+    - Variance: N/A
+    - Mode: N/A
+    - Range: N/A
+    - Max: True
+    - Min: True
+  - **variables**: list of String
     - Total Count: 5
     - Unique Count: 5
     - Missing Values: 0

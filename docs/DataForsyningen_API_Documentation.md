@@ -44,37 +44,37 @@
 ```
 
 ## Fields
-- **href**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 45
-  - Median Length: 45
-  - Mode Length: N/A
-  - Max Length: 45
-  - Min Length: 45
-- **nr**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 4
-  - Median Length: 4
-  - Mode Length: N/A
-  - Max Length: 4
-  - Min Length: 4
-- **navn**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 11
-  - Median Length: 11
-  - Mode Length: N/A
-  - Max Length: 11
-  - Min Length: 11
-- **stormodtageradresser**: Mixed or Unknown
-  - Sample Data: [None]
-- **bbox**: list
-  - List contains elements of type: Number
+list of dictionaries
+  - **href**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 45
+    - Median Length: 45
+    - Mode Length: N/A
+    - Max Length: 45
+    - Min Length: 45
+  - **nr**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 4
+    - Median Length: 4
+    - Mode Length: N/A
+    - Max Length: 4
+    - Min Length: 4
+  - **navn**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 11
+    - Median Length: 11
+    - Mode Length: N/A
+    - Max Length: 11
+    - Min Length: 11
+  - **stormodtageradresser**: Mixed or Unknown
+    - Sample Data: [None]
+  - **bbox**: list of Number
     - Total Count: 4
     - Unique Count: 4
     - Missing Values: 0
@@ -86,8 +86,7 @@
     - Range: 43.09772451
     - Max: 55.68185111
     - Min: 12.5841266
-- **visueltcenter**: list
-  - List contains elements of type: Number
+  - **visueltcenter**: list of Number
     - Total Count: 2
     - Unique Count: 2
     - Missing Values: 0
@@ -99,8 +98,7 @@
     - Range: 43.094651129999995
     - Max: 55.68065246
     - Min: 12.58600133
-- **kommuner**: list
-  - **List Headers**:
+  - **kommuner**: list of dictionaries
     - **href**: String
       - Total Count: 1
       - Unique Count: 1
@@ -128,42 +126,42 @@
       - Mode Length: N/A
       - Max Length: 9
       - Min Length: 9
-- **ændret**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 24
-  - Median Length: 24
-  - Mode Length: N/A
-  - Max Length: 24
-  - Min Length: 24
-- **geo_ændret**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 24
-  - Median Length: 24
-  - Mode Length: N/A
-  - Max Length: 24
-  - Min Length: 24
-- **geo_version**: Number
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Mean: 2
-  - Median: 2
-  - Standard Deviation: N/A
-  - Variance: N/A
-  - Mode: N/A
-  - Range: N/A
-  - Max: 2
-  - Min: 2
-- **dagi_id**: String
-  - Total Count: 1
-  - Unique Count: 1
-  - Missing Values: 0
-  - Average Length: 6
-  - Median Length: 6
-  - Mode Length: N/A
-  - Max Length: 6
-  - Min Length: 6
+  - **ændret**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 24
+    - Median Length: 24
+    - Mode Length: N/A
+    - Max Length: 24
+    - Min Length: 24
+  - **geo_ændret**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 24
+    - Median Length: 24
+    - Mode Length: N/A
+    - Max Length: 24
+    - Min Length: 24
+  - **geo_version**: Number
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Mean: 2
+    - Median: 2
+    - Standard Deviation: N/A
+    - Variance: N/A
+    - Mode: N/A
+    - Range: N/A
+    - Max: 2
+    - Min: 2
+  - **dagi_id**: String
+    - Total Count: 1
+    - Unique Count: 1
+    - Missing Values: 0
+    - Average Length: 6
+    - Median Length: 6
+    - Mode Length: N/A
+    - Max Length: 6
+    - Min Length: 6
