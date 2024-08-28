@@ -55,12 +55,14 @@ api_urls = {
 def fetch_api_data(url):
     headers = {'Accept-Charset': 'UTF-8'}
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, timeout=10)  # 10 seconds timeout
         response.raise_for_status()  # Raises exception for HTTP errors
         response.encoding = 'utf-8'  # Force response encoding to UTF-8
         return response.json() if response.text else None
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
+    except requests.exceptions.Timeout:
+        print(f"Request to {url} timed out.")
     except Exception as err:
         print(f"Other error occurred: {err}")
     return None
