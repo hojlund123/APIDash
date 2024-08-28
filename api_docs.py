@@ -119,7 +119,7 @@ def create_api_documentation(api_urls):
         api_data = fetch_api_data(api_url)
         if api_data:
             documentation = generate_documentation(api_name, api_url, api_data)
-            with open(f"docs/{api_name}_API_Documentation.md", "w") as file:
+            with open(f"docs/{api_name}_API_Documentation.md", "w", encoding="utf-8") as file:
                 file.write(documentation)
             print(f"Documentation for {api_name} API created successfully.")
         else:
