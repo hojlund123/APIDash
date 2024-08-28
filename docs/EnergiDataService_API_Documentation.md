@@ -5,40 +5,40 @@
 ## Sample Response
 ```
 {
-    "total": 1732551,
+    "total": 1745822,
     "limit": 100,
     "dataset": "Elspotprices",
     "records": [
         {
-            "HourUTC": "2024-06-11T21:00:00",
-            "HourDK": "2024-06-11T23:00:00",
+            "HourUTC": "2024-08-29T21:00:00",
+            "HourDK": "2024-08-29T23:00:00",
             "PriceArea": "DK1",
-            "SpotPriceDKK": 366.549988,
-            "SpotPriceEUR": 49.139999
+            "SpotPriceDKK": 821.280029,
+            "SpotPriceEUR": 110.099998
         },
         {
-            "HourUTC": "2024-06-11T21:00:00",
-            "HourDK": "2024-06-11T23:00:00",
+            "HourUTC": "2024-08-29T21:00:00",
+            "HourDK": "2024-08-29T23:00:00",
             "PriceArea": "DK2",
-            "SpotPriceDKK": 366.549988,
-            "SpotPriceEUR": 49.139999
+            "SpotPriceDKK": 821.280029,
+            "SpotPriceEUR": 110.099998
         },
         {
-            "HourUTC": "2024-06-11T21:00:00",
-            "HourDK": "2024-06-11T23:00:00",
+            "HourUTC": "2024-08-29T21:00:00",
+            "HourDK": "2024-08-29T23:00:00",
             "PriceArea": "NO2",
-            "SpotPriceDKK": 337.540009,
-            "SpotPriceEUR": 45.25
+            "SpotPriceDKK": 293.600006,
+            "SpotPriceEUR": 39.360001
         },
         {
-            "HourUTC": "2024-06-11T21:00:00",
-            "HourDK": "2024-06-11T23:00:00",
+            "HourUTC": "2024-08-29T21:00:00",
+            "HourDK": "2024-08-29T23:00:00",
             "PriceArea": "SE3",
-            "SpotPriceDKK": 366.549988,
-            "SpotPriceEUR": 49.139999
+            "SpotPriceDKK": -6.04,
+            "SpotPriceEUR": -0.81
         },
         {
-            "Hou
+            "HourUT
 ```
 
 ## Fields
@@ -46,14 +46,14 @@
   - Total Count: 1
   - Unique Count: 1
   - Missing Values: 0
-  - Mean: 1732551
-  - Median: 1732551
+  - Mean: 1745822
+  - Median: 1745822
   - Standard Deviation: N/A
   - Variance: N/A
   - Mode: N/A
   - Range: N/A
-  - Max: 1732551
-  - Min: 1732551
+  - Max: 1745822
+  - Min: 1745822
 - **limit**: Number
   - Total Count: 1
   - Unique Count: 1
@@ -107,23 +107,23 @@
     - Total Count: 1
     - Unique Count: 1
     - Missing Values: 0
-    - Mean: 366.549988
-    - Median: 366.549988
+    - Mean: 821.280029
+    - Median: 821.280029
     - Standard Deviation: N/A
     - Variance: N/A
     - Mode: N/A
     - Range: N/A
-    - Max: 366.549988
-    - Min: 366.549988
+    - Max: 821.280029
+    - Min: 821.280029
   - **SpotPriceEUR**: Number
     - Total Count: 1
     - Unique Count: 1
     - Missing Values: 0
-    - Mean: 49.139999
-    - Median: 49.139999
+    - Mean: 110.099998
+    - Median: 110.099998
     - Standard Deviation: N/A
     - Variance: N/A
     - Mode: N/A
     - Range: N/A
-    - Max: 49.139999
-    - Min: 49.139999
+    - Max: 110.099998
+    - Min: 110.099998

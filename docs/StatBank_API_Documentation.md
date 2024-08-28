@@ -7,11 +7,11 @@
 [
     {
         "id": "FOLK1A",
-        "text": "Folketal den 1. i kvartalet",
+        "text": "Befolkningen den 1. i kvartalet",
         "unit": "Antal",
-        "updated": "2024-05-10T08:00:00",
+        "updated": "2024-08-12T08:00:00",
         "firstPeriod": "2008K1",
-        "latestPeriod": "2024K2",
+        "latestPeriod": "2024K3",
         "active": true,
         "variables": [
             "omr\u00e5de",
@@ -23,11 +23,11 @@
     },
     {
         "id": "FOLK1AM",
-        "text": "Folketal den 1. i m\u00e5neden",
+        "text": "Befolkningen den 1. i m\u00e5neden",
         "unit": "Antal",
-        "updated": "2024-06-10T08:00:00",
+        "updated": "2024-08-12T08:00:00",
         "firstPeriod": "2021M10",
-        "latestPeriod": "2024M05",
+        "latestPeriod": "2024M07",
         "active": true,
         "variables": [
             "omr\u00e5de",
@@ -44,7 +44,7 @@
         "firstPeriod": "1971",
         "latestPeriod": "2024",
         "active": true,
-        "
+ 
 ```
 
 ## Fields
@@ -61,11 +61,11 @@
   - Total Count: 1
   - Unique Count: 1
   - Missing Values: 0
-  - Average Length: 27
-  - Median Length: 27
+  - Average Length: 31
+  - Median Length: 31
   - Mode Length: N/A
-  - Max Length: 27
-  - Min Length: 27
+  - Max Length: 31
+  - Min Length: 31
 - **unit**: String
   - Total Count: 1
   - Unique Count: 1
