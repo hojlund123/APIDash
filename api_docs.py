@@ -8,7 +8,8 @@ api_urls = {
     "StatBank": "https://api.statbank.dk/v1/tables",
     "Boliga": "https://api.boliga.dk",
     "EnergiDataService": "https://api.energidataservice.dk/dataset/Elspotprices",
-    "DataForsyningen": "https://api.dataforsyningen.dk/postnumre"
+    "DataForsyningen": "https://api.dataforsyningen.dk/postnumre",
+    "Retsinformation": "https://api.retsinformation.dk/v1/Documents"
 }
 
 # Function to fetch data from the API
