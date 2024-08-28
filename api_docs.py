@@ -5,50 +5,51 @@ import os
 
 # Define API URLs
 api_urls = {
-    "StatBank": "https://api.statbank.dk/v1/tables",  # Statistics Denmark API
-    "Boliga": "https://api.boliga.dk/api/v2/sold/v2",  # Real estate prices
-    "EnergiDataService": "https://api.energidataservice.dk/dataset/Elspotprices",  # Energy prices and consumption
-    "DataForsyningen": "https://api.dataforsyningen.dk/postnumre",  # Address and postal code data
-    "Rejseplanen": "https://www.rejseplanen.dk/webapp/index.html?language=en_EN#/webservice",  # Public transport schedules and routes
-    "DanskRetstidende": "https://api.retsinformation.dk/v1/documents",  # Danish legal information and laws
-    "CvrAPI": "https://api.cvr.dk/v1/virksomhed",  # Danish Business Register (CVR)
-    "DanmarksMeteorologiskeInstitut": "https://dmigw.govcloud.dk/v2/metObs/collections/observation/items",  # Danish Meteorological Institute (DMI) - Weather observations
-    "SundhedData": "https://api.sundhed.dk/v1/healthdata",  # Health data from Sundhed.dk
-    "JobNet": "https://job.jobnet.dk/CV/FindCV",  # Job listings from Jobnet.dk
-    "FolketingetAPI": "https://oda.ft.dk/api/1/",  # Data from the Danish Parliament
-    "Geodatastyrelsen": "https://api.dataforsyningen.dk/hoejdemodel",  # Elevation models and geospatial data
-    "KrakAPI": "https://api.krak.dk/v2.1/places",  # Place search and business listings
-    "Virksomhedsstyrelsen": "https://cvrapi.dk/api",  # Company data API
-    "Kulturarv": "https://api.kulturarv.dk/docs",  # Danish cultural heritage API
-    "DanmarksStatistik": "https://api.statbank.dk/v1/",  # Statistics Denmark API
-    "BygningsOgBoligRegister": "https://bbr.dk/BBRPublic",  # Building and housing register data
-    "SundhedsdataStyrelsen": "https://www.esundhed.dk/Indhold/Service/Serviceoversigt",  # Danish Health Data Authority
-    "MitID": "https://mitid.dk/public-api",  # MitID authentication and data access API
-    "Vejdirektoratet": "https://www.vejdirektoratet.dk/api",  # Danish Road Directorate - Traffic information and road data
-    "DanskPoliti": "https://politi.dk/api/v2/",  # Danish police data and crime reports
-    "Kulturministeriet": "https://api.kultur.dk/v1/museums",  # Cultural institutions and museums data
-    "E-boks": "https://api.e-boks.dk/v1/",  # Secure digital mailbox for Denmark
-    "Tinglysning": "https://api.tinglysning.dk/",  # Danish land registration data
-    "Folkebiblioteker": "https://api.bibliotek.dk/opensearch",  # Public library catalog data
-    "Virksomhedsregnskab": "https://api.regnskab.dk/v1/company/",  # Company financial statements
-    "NemID": "https://nemid.dk/api",  # Digital signature and authentication API
-    "DanmarksAdresser": "https://api.dataforsyningen.dk/adresser",  # Danish address data
-    "SkatAPI": "https://skat.dk/api",  # Danish Tax Authority data
-    "OpenDataDK": "https://portal.opendata.dk/api/3/action/",  # Open data portal for Denmark
-    "Bilstatistik": "https://bilstatistik.dk/api/v1/",  # Car statistics and registrations
-    "DKKursus": "https://www.kursus.dk/api",  # Courses and training programs in Denmark
-    "Foraeldreintra": "https://api.foraeldreintra.dk/v1",  # Parent communication platform for Danish schools
-    "Husleje": "https://husleje.dk/api/v2/",  # Rent data in Denmark
-    "Dagtilbud": "https://dagtilbud.dk/api/v1/",  # Daycare and early education data
-    "DanskSprognævn": "https://dsn.dk/api/v2/",  # Danish Language Council data
-    "NetcompanyAPI": "https://netcompany.dk/api",  # Services from Netcompany
-    "TourismDK": "https://api.visitdenmark.com/v1/places",  # Danish tourism data
-    "DanskBredbånd": "https://bredbaand.dk/api/v2/",  # Broadband coverage and speed data
-    "BedreBolig": "https://bedrebolig.dk/api/v1/",  # Energy efficiency data for buildings
-    "Arbejdstilsynet": "https://at.dk/api",  # Danish Working Environment Authority data
-    "Erhvervsstyrelsen": "https://api.erhvervsstyrelsen.dk/",  # Danish Business Authority data
-    "Energistyrelsen": "https://ens.dk/api",  # Danish Energy Agency data
+    "StatBank": "https://api.statbank.dk/v1/tables",
+    "Boliga": "https://api.boliga.dk/api/v2/sold/v2",
+    "EnergiDataService": "https://api.energidataservice.dk/dataset/Elspotprices",
+    "DataForsyningen": "https://api.dataforsyningen.dk/postnumre",
+    "Rejseplanen": "https://www.rejseplanen.dk/webapp/index.html?language=en_EN#/webservice",
+    "DanskRetstidende": "https://api.retsinformation.dk/v1/documents",
+    "CvrAPI": "https://api.cvr.dk/v1/virksomhed",
+    "DanmarksMeteorologiskeInstitut": "https://dmigw.govcloud.dk/v2/metObs/collections/observation/items",
+    "SundhedData": "https://api.sundhed.dk/v1/healthdata",
+    "JobNet": "https://job.jobnet.dk/CV/FindCV",
+    "FolketingetAPI": "https://oda.ft.dk/api/1/",
+    "Geodatastyrelsen": "https://api.dataforsyningen.dk/hoejdemodel",
+    "KrakAPI": "https://api.krak.dk/v2.1/places",
+    "Virksomhedsstyrelsen": "https://cvrapi.dk/api",
+    "Kulturarv": "https://api.kulturarv.dk/docs",
+    "DanmarksStatistik": "https://api.statbank.dk/v1/",
+    "BygningsOgBoligRegister": "https://bbr.dk/BBRPublic",
+    "SundhedsdataStyrelsen": "https://www.esundhed.dk/Indhold/Service/Serviceoversigt",
+    "MitID": "https://mitid.dk/public-api",
+    "Vejdirektoratet": "https://www.vejdirektoratet.dk/api",
+    "DanskPoliti": "https://politi.dk/api/v2/",
+    "Kulturministeriet": "https://api.kultur.dk/v1/museums",
+    "E-boks": "https://api.e-boks.dk/v1/",
+    "Tinglysning": "https://api.tinglysning.dk/",
+    "Folkebiblioteker": "https://api.bibliotek.dk/opensearch",
+    "Virksomhedsregnskab": "https://api.regnskab.dk/v1/company/",
+    "NemID": "https://nemid.dk/api",
+    "DanmarksAdresser": "https://api.dataforsyningen.dk/adresser",
+    "SkatAPI": "https://skat.dk/api",
+    "OpenDataDK": "https://portal.opendata.dk/api/3/action/",
+    "Bilstatistik": "https://bilstatistik.dk/api/v1/",
+    "DKKursus": "https://www.kursus.dk/api",
+    "Foraeldreintra": "https://api.foraeldreintra.dk/v1",
+    "Husleje": "https://husleje.dk/api/v2/",
+    "Dagtilbud": "https://dagtilbud.dk/api/v1/",
+    "DanskSprognævn": "https://dsn.dk/api/v2/",
+    "NetcompanyAPI": "https://netcompany.dk/api",
+    "TourismDK": "https://api.visitdenmark.com/v1/places",
+    "DanskBredbånd": "https://bredbaand.dk/api/v2/",
+    "BedreBolig": "https://bedrebolig.dk/api/v1/",
+    "Arbejdstilsynet": "https://at.dk/api",
+    "Erhvervsstyrelsen": "https://api.erhvervsstyrelsen.dk/",
+    "Energistyrelsen": "https://ens.dk/api"
 }
+
 
 # Function to fetch data from the API
 def fetch_api_data(url):
