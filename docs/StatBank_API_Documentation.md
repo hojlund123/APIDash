@@ -14,8 +14,8 @@
         "latestPeriod": "2024K3",
         "active": true,
         "variables": [
-            "omr\u00e5de",
-            "k\u00f8n",
+            "område",
+            "køn",
             "alder",
             "civilstand",
             "tid"
@@ -23,15 +23,15 @@
     },
     {
         "id": "FOLK1AM",
-        "text": "Befolkningen den 1. i m\u00e5neden",
+        "text": "Befolkningen den 1. i måneden",
         "unit": "Antal",
         "updated": "2024-08-12T08:00:00",
         "firstPeriod": "2021M10",
         "latestPeriod": "2024M07",
         "active": true,
         "variables": [
-            "omr\u00e5de",
-            "k\u00f8n",
+            "område",
+            "køn",
             "alder",
             "tid"
         ]
@@ -44,84 +44,17 @@
         "firstPeriod": "1971",
         "latestPeriod": "2024",
         "active": true,
- 
+        "variables": [
+   
 ```
 
 ## Fields
 list of dictionaries
-  - **id**:     - Type: String
-    - Total Count: 1
-    - Unique Count: 1
-    - Missing Values: 0
-    - Average Length: 6
-    - Median Length: 6
-    - Mode Length: N/A
-    - Max Length: 6
-    - Min Length: 6
-  - **text**:     - Type: String
-    - Total Count: 1
-    - Unique Count: 1
-    - Missing Values: 0
-    - Average Length: 31
-    - Median Length: 31
-    - Mode Length: N/A
-    - Max Length: 31
-    - Min Length: 31
-  - **unit**:     - Type: String
-    - Total Count: 1
-    - Unique Count: 1
-    - Missing Values: 0
-    - Average Length: 5
-    - Median Length: 5
-    - Mode Length: N/A
-    - Max Length: 5
-    - Min Length: 5
-  - **updated**:     - Type: String
-    - Total Count: 1
-    - Unique Count: 1
-    - Missing Values: 0
-    - Average Length: 19
-    - Median Length: 19
-    - Mode Length: N/A
-    - Max Length: 19
-    - Min Length: 19
-  - **firstPeriod**:     - Type: String
-    - Total Count: 1
-    - Unique Count: 1
-    - Missing Values: 0
-    - Average Length: 6
-    - Median Length: 6
-    - Mode Length: N/A
-    - Max Length: 6
-    - Min Length: 6
-  - **latestPeriod**:     - Type: String
-    - Total Count: 1
-    - Unique Count: 1
-    - Missing Values: 0
-    - Average Length: 6
-    - Median Length: 6
-    - Mode Length: N/A
-    - Max Length: 6
-    - Min Length: 6
-  - **active**:     - Type: Number
-    - Total Count: 1
-    - Unique Count: 1
-    - Missing Values: 0
-    - Mean: 1
-    - Median: True
-    - Standard Deviation: N/A
-    - Variance: N/A
-    - Mode: N/A
-    - Range: 0
-    - Max: True
-    - Min: True
-  - **variables**: list of items
-    - Type: String
-    - Total Count: 5
-    - Unique Count: 5
-    - Missing Values: 0
-    - Average Length: 5.4
-    - Median Length: 5
-    - Mode Length: 3
-    - Max Length: 10
-    - Min Length: 3
+  - **id**: String
+  - **text**: String
+  - **unit**: String
+  - **updated**: String
+  - **firstPeriod**: String
+  - **latestPeriod**: String
+  - **active**: Number
+  - **variables**: list of String
