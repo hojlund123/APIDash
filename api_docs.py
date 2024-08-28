@@ -87,12 +87,12 @@ def document_fields(data, indent=0):
 def generate_documentation(api_name, api_url, api_data):
     doc = f"# {api_name} API Documentation\n\n"
     doc += f"**URL**: {api_url}\n\n"
-    doc += "## Sample Response\n"
-    doc += "```\n"
-    doc += json.dumps(api_data, ensure_ascii=False, indent=4)[:1000]  # Limit the sample output
-    doc += "\n```\n\n"
     doc += "## Fields\n"
     doc += document_fields(api_data) if api_data else "No data available or data fetching failed."
+    doc += "## Sample Response\n"
+    doc += "```\n"
+    doc += json.dumps(api_data, ensure_ascii=False, indent=4)[:3000]  # Limit the sample output
+    doc += "\n```\n\n"
     return doc
 
 # Main function to create and write documentation for all APIs
