@@ -42,7 +42,7 @@
 ```
 
 ## Fields
-- **total**: Number
+- **total**:   - Type: Number
   - Total Count: 1
   - Unique Count: 1
   - Missing Values: 0
@@ -51,10 +51,10 @@
   - Standard Deviation: N/A
   - Variance: N/A
   - Mode: N/A
-  - Range: N/A
+  - Range: 0
   - Max: 1745822
   - Min: 1745822
-- **limit**: Number
+- **limit**:   - Type: Number
   - Total Count: 1
   - Unique Count: 1
   - Missing Values: 0
@@ -63,10 +63,10 @@
   - Standard Deviation: N/A
   - Variance: N/A
   - Mode: N/A
-  - Range: N/A
+  - Range: 0
   - Max: 100
   - Min: 100
-- **dataset**: String
+- **dataset**:   - Type: String
   - Total Count: 1
   - Unique Count: 1
   - Missing Values: 0
@@ -75,8 +75,8 @@
   - Mode Length: N/A
   - Max Length: 12
   - Min Length: 12
-- **records**: list of dictionaries
-  - **HourUTC**: String
+- **records**: list of items
+  - **HourUTC**:     - Type: String
     - Total Count: 1
     - Unique Count: 1
     - Missing Values: 0
@@ -85,7 +85,7 @@
     - Mode Length: N/A
     - Max Length: 19
     - Min Length: 19
-  - **HourDK**: String
+  - **HourDK**:     - Type: String
     - Total Count: 1
     - Unique Count: 1
     - Missing Values: 0
@@ -94,7 +94,7 @@
     - Mode Length: N/A
     - Max Length: 19
     - Min Length: 19
-  - **PriceArea**: String
+  - **PriceArea**:     - Type: String
     - Total Count: 1
     - Unique Count: 1
     - Missing Values: 0
@@ -103,7 +103,7 @@
     - Mode Length: N/A
     - Max Length: 3
     - Min Length: 3
-  - **SpotPriceDKK**: Number
+  - **SpotPriceDKK**:     - Type: Number
     - Total Count: 1
     - Unique Count: 1
     - Missing Values: 0
@@ -112,10 +112,10 @@
     - Standard Deviation: N/A
     - Variance: N/A
     - Mode: N/A
-    - Range: N/A
+    - Range: 0.0
     - Max: 821.280029
     - Min: 821.280029
-  - **SpotPriceEUR**: Number
+  - **SpotPriceEUR**:     - Type: Number
     - Total Count: 1
     - Unique Count: 1
     - Missing Values: 0
@@ -124,6 +124,6 @@
     - Standard Deviation: N/A
     - Variance: N/A
     - Mode: N/A
-    - Range: N/A
+    - Range: 0.0
     - Max: 110.099998
     - Min: 110.099998
