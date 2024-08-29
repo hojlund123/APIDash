@@ -4,10 +4,12 @@ import statistics
 import os
 import logging
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, filename='api_documentation.log', filemode='a',
-                    format='%(asctime)s - %(levelname)s - %(message)s')
-
+# Configure logging to output to standard output
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    handlers=[
+                        logging.StreamHandler()
+                    ])
 # Define API URLs
 api_urls = {
     "StatBank": "https://api.statbank.dk/v1/tables",
