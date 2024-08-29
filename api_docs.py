@@ -2,6 +2,11 @@ import requests
 import json
 import statistics
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, filename='api_documentation.log', filemode='a',
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define API URLs
 api_urls = {
@@ -50,7 +55,6 @@ api_urls = {
     "Energistyrelsen": "https://ens.dk/api"
 }
 
-
 # Function to fetch data from the API
 def fetch_api_data(url):
     headers = {'Accept-Charset': 'UTF-8'}
@@ -58,23 +62,25 @@ def fetch_api_data(url):
         response = requests.get(url, headers=headers, timeout=10)  # 10 seconds timeout
         response.raise_for_status()  # Raises exception for HTTP errors
         response.encoding = 'utf-8'  # Force response encoding to UTF-8
+        logging.info(f'Successfully fetched data from {url}')
         return response.json() if response.text else None
     except requests.exceptions.HTTPError as http_err:
-        print(f"HTTP error occurred: {http_err}")
+        logging.error(f"HTTP error occurred: {http_err} - URL: {url}")
     except requests.exceptions.Timeout:
-        print(f"Request to {url} timed out.")
+        logging.error(f"Request to {url} timed out.")
     except Exception as err:
-        print(f"Other error occurred: {err}")
+        logging.error(f"Other error occurred: {err} - URL: {url}")
     return None
 
 # Function to generate detailed statistics for a list of data
 def analyze_data(data):
     if not data:
+        logging.info("Data is None or empty.")
         return {'Type': 'None', 'Total Count': 0}
     try:
         if all(isinstance(i, str) for i in data):
             lengths = [len(i) for i in data]
-            return {
+            stats = {
                 'Type': 'String',
                 'Total Count': len(data),
                 'Unique Count': len(set(data)),
@@ -85,8 +91,10 @@ def analyze_data(data):
                 'Max Length': max(lengths) if lengths else 0,
                 'Min Length': min(lengths) if lengths else 0
             }
+            logging.info(f"String data analyzed: {stats}")
+            return stats
         elif all(isinstance(i, (int, float)) for i in data):
-            return {
+            stats = {
                 'Type': 'Number',
                 'Total Count': len(data),
                 'Unique Count': len(set(data)),
@@ -100,30 +108,11 @@ def analyze_data(data):
                 'Max': max(data) if data else 0,
                 'Min': min(data) if data else 0
             }
+            logging.info(f"Numerical data analyzed: {stats}")
+            return stats
     except Exception as e:
-        print(f"Error processing data: {e}")
+        logging.error(f"Error processing data: {e}")
     return {'Type': 'Unknown'}
-
-# Recursive function to document fields
-def document_fields(data, indent=0):
-    doc = ""
-    if isinstance(data, dict):
-        for key, value in data.items():
-            doc += " " * indent + f"- **{key}**: "
-            if isinstance(value, list):
-                doc += f"list of {analyze_data(value)['Type']}\n"
-                if value and isinstance(value[0], dict):
-                    doc += document_fields(value[0], indent + 2)
-            elif isinstance(value, dict):
-                doc += "dictionary\n"
-                doc += document_fields(value, indent + 2)
-            else:
-                doc += f"{analyze_data([value])['Type']}\n"
-    elif isinstance(data, list):
-        if data and isinstance(data[0], dict):
-            doc += "list of dictionaries\n"
-            doc += document_fields(data[0], indent + 2)
-    return doc
 
 # Function to generate documentation for the API
 def generate_documentation(api_name, api_url, api_data):
@@ -142,14 +131,15 @@ def create_api_documentation(api_urls):
     if not os.path.exists('docs'):
         os.makedirs('docs')
     for api_name, api_url in api_urls.items():
+        logging.info(f"Starting documentation for {api_name} at {api_url}")
         api_data = fetch_api_data(api_url)
         if api_data:
             documentation = generate_documentation(api_name, api_url, api_data)
             with open(f"docs/{api_name}_API_Documentation.md", "w", encoding='utf-8') as file:
                 file.write(documentation)
-            print(f"Documentation for {api_name} API created successfully.")
+            logging.info(f"Documentation for {api_name} API created successfully.")
         else:
-            print(f"Failed to fetch data for {api_name} API. Check the API endpoint and network status.")
+            logging.warning(f"Failed to fetch data for {api_name} API. Check the API endpoint and network status.")
 
 # Execute the documentation generation
 create_api_documentation(api_urls)
