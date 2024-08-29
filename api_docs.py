@@ -114,6 +114,27 @@ def analyze_data(data):
         logging.error(f"Error processing data: {e}")
     return {'Type': 'Unknown'}
 
+# Recursive function to document fields
+def document_fields(data, indent=0):
+    doc = ""
+    if isinstance(data, dict):
+        for key, value in data.items():
+            doc += " " * indent + f"- **{key}**: "
+            if isinstance(value, list):
+                doc += f"list of {analyze_data(value)['Type']}\n"
+                if value and isinstance(value[0], dict):
+                    doc += document_fields(value[0], indent + 2)
+            elif isinstance(value, dict):
+                doc += "dictionary\n"
+                doc += document_fields(value, indent + 2)
+            else:
+                doc += f"{analyze_data([value])['Type']}\n"
+    elif isinstance(data, list):
+        if data and isinstance(data[0], dict):
+            doc += "list of dictionaries\n"
+            doc += document_fields(data[0], indent + 2)
+    return doc
+
 # Function to generate documentation for the API
 def generate_documentation(api_name, api_url, api_data):
     doc = f"# {api_name} API Documentation\n\n"
